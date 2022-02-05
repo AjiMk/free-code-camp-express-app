@@ -53,6 +53,7 @@ app.use(express.static('public'));
 app.disable('strict-transport-security');
 app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
+app.use(helment.xssFilter());
 
 app.use('/_api', api);
 app.get("/", function (request, response) {
