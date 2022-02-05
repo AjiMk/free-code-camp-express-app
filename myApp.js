@@ -52,6 +52,7 @@ const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 app.use(helmet.hidePoweredBy());
+app.use(helmet.frameguard());
 
 app.use('/_api', api);
 app.get("/", function (request, response) {
